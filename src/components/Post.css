@@ -1,0 +1,114 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+    transform: none;
+  }
+  
+  .post h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: rgb(73, 73, 73);
+    text-align: center;
+  }
+  
+  /* Markdown content styling */
+  .post ul {
+    list-style-type: disc;
+    padding-left: 60px;
+    margin-top: 0;
+  }
+  
+  .post li {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .post blockquote {
+    border-left: 3px solid rgb(73, 73, 73);
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .post p {
+    line-height: 1.8;
+  }
+  
+  /* Additional markdown element styling */
+  .post h2, .post h3, .post h4, .post h5, .post h6 {
+    margin: 30px 0 15px 0;
+    color: rgb(73, 73, 73);
+    font-weight: 600;
+  }
+  
+  .post h2 {
+    font-size: 28px;
+  }
+  
+  .post h3 {
+    font-size: 24px;
+  }
+  
+  .post h4 {
+    font-size: 20px;
+  }
+  
+  .post code {
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+  
+  .post pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  
+  .post pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .post a {
+    color: #0066cc;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .post a:hover {
+    color: #004499;
+  }
+  
+  .post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  
+  .post strong {
+    font-weight: 600;
+  }
+  
+  .post em {
+    font-style: italic;
+  }
+  
+  .post hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 30px 0;
+  }
