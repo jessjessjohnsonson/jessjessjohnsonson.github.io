@@ -73,14 +73,15 @@ html, body, #root {
   margin: 0 auto;
 }
 
-.page_description {
+.page_header_text {
   position: relative;
   top: 0;
-  text-align: center;
+  text-align: left;
   width: 80%;
   height: fit-content;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: normal;
   margin-bottom: 20px;
 }
 
@@ -105,7 +106,7 @@ html, body, #root {
   border-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   width: 300px;
-  min-height: 150px;
+  min-height: 180px;
   max-height: fit-content;
   padding: 10px;
   display: flex;

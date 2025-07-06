@@ -1,38 +1,3 @@
-  // Helper function to get chapter by ID
-  export const getChapterById = (id) => {
-    return dsmChapters.find(chapter => chapter.id === id);
-  };
-  
-  // Helper function to get subchapter by ID across all chapters
-  export const getSubchapterById = (subchapterId) => {
-    for (const chapter of dsmChapters) {
-      if (chapter.subchapters) {
-        const subchapter = chapter.subchapters.find(sub => sub.id === subchapterId);
-        if (subchapter) {
-          return subchapter;
-        }
-      }
-    }
-    return null;
-  };
-  
-  // Helper function to get disorder by ID across all subchapters
-  export const getDisorderById = (disorderId) => {
-    for (const chapter of dsmChapters) {
-      if (chapter.subchapters) {
-        for (const subchapter of chapter.subchapters) {
-          if (subchapter.disorders) {
-            const disorder = subchapter.disorders.find(disorder => disorder.id === disorderId);
-            if (disorder) {
-              return disorder;
-            }
-          }
-        }
-      }
-    }
-    return null;
-  };
-
 export const dsmChapters = [
     {
         id: "neurodevelopmental-disorders",

@@ -79,7 +79,6 @@ const router = createBrowserRouter([
         index: true,
         element: <FlatPage />,
         loader: () => ({
-          description: "Welcome to my blog etc etc.",
           children: getStructure(""),
         })
       },
@@ -90,12 +89,14 @@ const router = createBrowserRouter([
           const { folderName } = params
           
           let description = ''
+          let header_text = ''
           let children = []
           
           // Check if there's a folder with this name that has an index.jsx
           const folderInfo = findFolderByName(folderName)
           if (folderInfo) {
             description = folderInfo.module.description ?? folderInfo.module.frontmatter?.description ?? ''
+            header_text = folderInfo.module.header_text ?? ''
             
             // Get subsections from getStructure using the full path
             const subsections = getStructure(folderInfo.fullPath)
@@ -106,12 +107,41 @@ const router = createBrowserRouter([
           const posts = findPostsByFolderName(folderName)
           if (posts.length > 0) {
             console.log('Found posts in folder:', folderName)
+            console.log(posts)
+            console.log(children)
             children.push(...posts)
           }
+
+          let orderedChildren = [];
+          // order children based on the order array
+          if (!folderInfo.module.order) {
+            console.log('No order array found for folder:', folderName);
+            console.log('Displaying children in arbitrary order')
+            orderedChildren = children;
+          } else {
+            //  console.log('Order array found for folder:', folderName)
+            // console.log(folderInfo.module.order)
+            for(const link of folderInfo.module.order) {
+              const child = children.find(child => child.link === link)
+              if(child) {
+                orderedChildren.push(child)
+              } else {
+                console.log(`Child with link ${link} not found in children array`)
+              }
+            }
+            // console.log('Ordered children:', orderedChildren)
+            if(orderedChildren.length !== children.length) {
+              console.log('Ordered children length does not match children length')
+              console.log('Ordered children:', orderedChildren)
+              console.log('Children:', children)
+            }
+          }
+          children = orderedChildren;
         
           if (children.length > 0) {
             return {
               description: description || ``,
+              header_text: header_text || ``,
               children: children
             }
           }

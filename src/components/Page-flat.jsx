@@ -2,7 +2,7 @@ import React from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
 
 export default function FlatPage() {
-  const { description, children } = useLoaderData()
+  const { header_text, children } = useLoaderData()
 
   if (!children || children.length === 0) {
     return <p className="no-posts">No content found</p>;
@@ -20,7 +20,7 @@ export default function FlatPage() {
 
   return (
     <>
-      <p className="page_description">{description}</p>
+      {header_text ? <p className="page_header_text">{header_text}</p> : <p style={{ height: '80px' }}></p>}
       <div className="card_container" style={{ display: 'flex', gap: '1rem' }}>
         {columns.map((column, columnIndex) => (
           <div key={columnIndex} style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>

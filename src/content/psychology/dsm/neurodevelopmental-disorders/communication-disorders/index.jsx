@@ -1,3 +1,4 @@
 export const title       = "Communication Disorders"
-export const description = "Notes on communication disorders."
 export const slug = "communication-disorders"
+export const description = "Deficits in language, speech, and nonverbal communication."
+export const order = []
