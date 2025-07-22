@@ -1,15 +1,19 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { plugin as markdownPlugin, Mode } from 'vite-plugin-markdown'
+import { defineConfig }    from 'vite';
+import react               from '@vitejs/plugin-react';
+import { plugin as markdownPlugin }   from 'vite-plugin-markdown';
+import { Mode }           from 'vite-plugin-markdown';  
 
 export default defineConfig({
-  base: '/<jessjessjohnsonson.github.io>/',
+  base: './',
   plugins: [
     react(),
-    markdownPlugin({ mode: [Mode.HTML] })
+    markdownPlugin({
+      mode: [Mode.HTML],
+      include: 'src/content/**/*.md'
+    })
   ],
-  assetsInclude: ['**/*.html'],
   build: {
-    outDir: 'docs'
+    outDir: 'docs',
+    assetsDir: 'assets'
   }
 });
