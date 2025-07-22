@@ -5,13 +5,21 @@ import rehypeRaw from 'rehype-raw';
 import './Post.css';
 
 function Post() {
-  const { title, content } = useLoaderData();
+  const { title, content, type } = useLoaderData();
   
   return (
     <>
-      <div className="post">
+      <div className={`post ${type === 'jsx' ? 'jsx-post' : ''}`}>
         <h1>{title}</h1>
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+        {type === 'jsx' ? (
+          // Render JSX content directly
+          <div className="jsx-content">
+            {React.createElement(content.default || content)}
+          </div>
+        ) : (
+          // Render markdown content
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+        )}
       </div>
     </>
   );

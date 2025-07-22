@@ -26,5 +26,12 @@ export const glossary = [
     {
         id: "negativism",
         description: "Active opposition (doing the opposite), passive resistance (simply not complying), or refusal to respond to instructions or interactions."
-    }
+    },
+    {
+        id: "prodromal",
+        description: "Related to the period between the appearance of initial symptoms and the full development of an illness."
+    },
+    {
+        id: "delirium",
+        description: "A state of acute confusion, marked by disorientation, altered consciousness, and a reduced ability to focus attention."
 ]

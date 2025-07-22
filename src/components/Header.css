@@ -1,0 +1,42 @@
+.header_bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    margin: 5px;
+    width: 90%;
+    max-width: 1200px;
+    border-bottom: 1px solid rgba(68, 67, 65, 0.3);
+    font-size: 0.5rem;
+  }
+  
+  .home_button {
+    background-color: #FDFAF5;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .home_button:hover {
+    transform: scale(1.05);
+    color: rgb(4, 4, 4);
+  }
+  
+  .search_bar {
+    width: 300px;
+    background-color:rgb(221, 221, 218);
+    border-radius: 3px;
+    border-color:rgba(221, 221, 218, 0.87);
+    padding: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .search_bar:hover {
+    transform: scale(1.02);
+  }

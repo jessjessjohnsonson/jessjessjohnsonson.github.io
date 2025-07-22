@@ -1,7 +1,7 @@
 // IMPORTS ALL SECTIONS (INDEX.JSX FILES)
 const allIndexes = import.meta.glob('/src/content/**/index.jsx', { eager: true })
 
-export function getStructure(path = '') {
+export function getStructure(path = '') { 
   // split the incoming path into its segments:
   //   ''                   → []
   //   'psychology'         → ['psychology']
@@ -46,12 +46,22 @@ export function getStructure(path = '') {
     })
 }
 
-// IMPORTS ALL POSTS (MD FILES) 
-const allPostFiles = import.meta.glob('/src/content/**/*.md', {eager: true})
+// IMPORTS ALL POSTS (MD FILES AND JSX FILES, EXCLUDING INDEX.JSX)
+const allMdFiles = import.meta.glob('/src/content/**/*.md', {eager: true})
+const allJsxFiles = import.meta.glob('/src/content/**/*.jsx', {eager: true})
+
+// Filter out index.jsx files from JSX posts
+const jsxPostFiles = Object.fromEntries(
+  Object.entries(allJsxFiles).filter(([filePath]) => {
+    return !filePath.endsWith('index.jsx')
+  })
+)
 
 // Returns all posts as an array of objects
 export function getPosts({category}) {
-  const allPosts = Object.entries(allPostFiles);
+  const allMdPosts = Object.entries(allMdFiles);
+  const allJsxPosts = Object.entries(jsxPostFiles);
+  const allPosts = [...allMdPosts, ...allJsxPosts];
 
   if (category === 'all') {
     return allPosts.map(([filePath, content]) => {
@@ -62,7 +72,7 @@ export function getPosts({category}) {
 
   const filteredPosts = allPosts
     .map(([filePath, content]) => {
-      const category = content.attributes.category || 'Uncategorized';
+      const category = content.attributes?.category || content.category || 'Uncategorized';
       
       return { filePath, content, category };
     })
@@ -73,16 +83,33 @@ export function getPosts({category}) {
 }
 
 function parsePost(filePath, content) {
-  const postId = filePath.split('/').pop().replace('.md', '');
+  const fileName = filePath.split('/').pop();
+  const isJsx = fileName.endsWith('.jsx');
+  const postId = fileName.replace(isJsx ? '.jsx' : '.md', '');
   
-  // Access properties directly from the module object
-  return {
-    postId: postId,
-    title: content.attributes.title || 'Untitled',
-    link: `/${postId}`,
-    image: content.attributes.image || '',
-    description: content.attributes.description || '',
-    category: content.attributes.category || '',
-    content: content.html || ''
-  };
+  if (isJsx) {
+    // Handle JSX posts
+    return {
+      postId: postId,
+      title: content.title || content.frontmatter?.title || 'Untitled',
+      link: `/${postId}`,
+      image: content.image || content.frontmatter?.image || '',
+      description: content.description || content.frontmatter?.description || '',
+      category: content.category || content.frontmatter?.category || '',
+      content: content,
+      type: 'jsx'
+    };
+  } else {
+    // Handle MD posts
+    return {
+      postId: postId,
+      title: content.attributes.title || 'Untitled',
+      link: `/${postId}`,
+      image: content.attributes.image || '',
+      description: content.attributes.description || '',
+      category: content.attributes.category || '',
+      content: content.html || '',
+      type: 'markdown'
+    };
+  }
 }
