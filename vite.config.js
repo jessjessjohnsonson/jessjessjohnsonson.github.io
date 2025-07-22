@@ -4,7 +4,7 @@ import { plugin as markdownPlugin }   from 'vite-plugin-markdown';
 import { Mode }           from 'vite-plugin-markdown';  
 
 export default defineConfig({
-  base: './',
+  base: '/jessjessjohnsonson.github.io/',
   plugins: [
     react(),
     markdownPlugin({
