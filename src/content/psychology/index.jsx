@@ -1,2 +1,2 @@
 export const title = "Psychology"
-export const description = "Notes on things I'm studying in psychology."
+export const description = "Notes on the DSM and psychological nosology."
