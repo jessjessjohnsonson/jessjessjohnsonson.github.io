@@ -1,7 +1,7 @@
 ---
 title: Ana
 category: translation
-image: public/images/ernst_stöhr_couple_by_a_lake.jpg
+image: /images/ernst_stöhr_couple_by_a_lake.jpg
 ---
 This is my English translation of Ismael Serrano's song "Ana".  
 

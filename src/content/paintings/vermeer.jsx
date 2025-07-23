@@ -1,12 +1,12 @@
 import Paintings from "../../components/Paintings"
 
 export const title = "Johannes Vermeer";
-export const image = "/public/images/vermeer/1659_Girl_Reading_a_Letter_at_an_Open_Window.jpg"
+export const image = "/images/vermeer/1659_Girl_Reading_a_Letter_at_an_Open_Window.jpg"
 
-const vermeerPaintings = import.meta.glob('/public/images/vermeer/*.{jpg,png}', { eager: true })
+const paintings = import.meta.glob('/images/vermeer/*.{jpg,png}', { eager: true })
 
-const vermeerPaintingInfo = Object.fromEntries(
-    Object.keys(vermeerPaintings).map((filePath) => {
+const paintingInfo = Object.fromEntries(
+    Object.keys(paintings).map((filePath) => {
       const fileName = filePath.split('/').pop()
   
       const baseName = fileName.replace(/\.[^/.]+$/, '')
@@ -27,5 +27,5 @@ const vermeerPaintingInfo = Object.fromEntries(
   
 
 export default function Vermeer() {
-    return <Paintings paintings={vermeerPaintings} paintingInfo={vermeerPaintingInfo} />
+    return <Paintings paintings={paintings} paintingInfo={paintingInfo} />
 }
