@@ -1,9 +1,9 @@
 import Paintings from "../../components/Paintings"
 
 export const title = "Carl Fredrik Hill";
-export const image = "/public/images/fredrik-hill/1877_Sister_Anna.jpg"
+export const image = "/images/fredrik-hill/1877_Sister_Anna.jpg"
 
-const vermeerPaintings = import.meta.glob('/public/images/fredrik-hill/*.{jpg,png}', { eager: true })
+const vermeerPaintings = import.meta.glob('/images/fredrik-hill/*.{jpg,png}', { eager: true })
 
 const vermeerPaintingInfo = Object.fromEntries(
     Object.keys(vermeerPaintings).map((filePath) => {
