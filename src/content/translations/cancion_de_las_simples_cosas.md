@@ -4,7 +4,7 @@ category: translation
 image: /images/carl_moll_lilies.png
 ---
 
-This is my English translation of César Isella's song "Song of the Simple Things".  
+<i>This is my English translation of César Isella's song "Song of the Simple Things".</i>  
 
 One bids farewell, insensibly, to the little things  
 Like a tree in autumn that loses its leaves  

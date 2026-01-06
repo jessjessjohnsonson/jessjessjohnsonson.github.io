@@ -1,9 +1,9 @@
 ---
 title: Ana
 category: translation
-image: /images/ernst_stöhr_couple_by_a_lake.jpg
+image: /images/ernst_stöhr_couple_by_a_lake.png
 ---
-This is my English translation of Ismael Serrano's song "Ana".  
+<i>This is my English translation of Ismael Serrano's song "Ana".</i>  
 
 Ana, life is so short  
 And there are so many goodbyes  

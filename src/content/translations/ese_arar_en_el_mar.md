@@ -4,7 +4,7 @@ category: translation
 image: /images/gracia_barrios.png
 ---
 
-This is my English translation of Chabuca Granda's song "That Plowing In the Sea".  
+<i>This is my English translation of Chabuca Granda's song "That Plowing In the Sea".</i>  
 
 When I forget, I will have forgotten  
 I will live as if sleepwalking, free  

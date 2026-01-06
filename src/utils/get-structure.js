@@ -108,7 +108,7 @@ function parsePost(filePath, content) {
       image: content.attributes.image || '',
       description: content.attributes.description || '',
       category: content.attributes.category || '',
-      content: content.html || '',
+      content: content.markdown || '',
       type: 'markdown'
     };
   }

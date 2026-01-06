@@ -139,8 +139,6 @@ const router = createBrowserRouter([
             console.log('Displaying children in arbitrary order')
             orderedChildren = children;
           } else {
-            //  console.log('Order array found for folder:', folderName)
-            // console.log(folderInfo.module.order)
             for(const link of folderInfo.module.order) {
               const child = children.find(child => child.link === link)
               if(child) {
@@ -149,7 +147,6 @@ const router = createBrowserRouter([
                 console.log(`Child with link ${link} not found in children array`)
               }
             }
-            // console.log('Ordered children:', orderedChildren)
             if(orderedChildren.length !== children.length) {
               console.log('Ordered children length does not match children length')
               console.log('Ordered children:', orderedChildren)

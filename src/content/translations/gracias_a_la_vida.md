@@ -4,7 +4,7 @@ category: translation
 image: /images/chagall.png
 ---
 
-This is my English translation of Violeta Parra's song "Thanks to Life".
+<i>This is my English translation of Violeta Parra's song "Thanks to Life".</i>
 
 Thanks to life that has given me so much  
 It gave me two stars for eyes  

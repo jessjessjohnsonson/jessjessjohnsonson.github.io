@@ -4,7 +4,7 @@ category: translation
 image: /images/roberto_matta.png
 ---
 
-This is my English translation of Ismael Serrano's song "I Came from the North".  
+<i>This is my English translation of Ismael Serrano's song "I Came from the North".</i>  
 
 I came from the north looking for a song and a cross  
 There crossed a comet, and in its wake was you  

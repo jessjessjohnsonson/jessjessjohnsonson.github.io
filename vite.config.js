@@ -3,12 +3,12 @@ import react               from '@vitejs/plugin-react';
 import { plugin as markdownPlugin }   from 'vite-plugin-markdown';
 import { Mode }           from 'vite-plugin-markdown';  
 
-export default defineConfig({
-  base: '/jessjessjohnsonson.github.io/',
+export default defineConfig(({ command }) => ({
+  base: '/',
   plugins: [
     react(),
     markdownPlugin({
-      mode: [Mode.HTML],
+      mode: [Mode.MARKDOWN],
       include: 'src/content/**/*.md'
     })
   ],
@@ -16,4 +16,4 @@ export default defineConfig({
     outDir: 'docs',
     assetsDir: 'assets'
   }
-});
+}))

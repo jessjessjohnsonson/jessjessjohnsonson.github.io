@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm'
 import './Post.css';
 
 function Post() {
@@ -18,7 +19,11 @@ function Post() {
           </div>
         ) : (
           // Render markdown content
-          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+          <ReactMarkdown 
+            rehypePlugins={[rehypeRaw]} 
+            remarkPlugins={[remarkGfm]}
+          >
+            {content}</ReactMarkdown>
         )}
       </div>
     </>

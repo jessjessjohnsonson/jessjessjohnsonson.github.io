@@ -26,6 +26,8 @@
 
 .post h2 {
   font-size: 28px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .post h3 {
@@ -34,10 +36,14 @@
 
 .post h4 {
   font-size: 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .post p {
   line-height: 1.8;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 /* JSX Post specific styles - full screen */
@@ -211,4 +217,38 @@
   border: none;
   border-top: 1px solid #ddd;
   margin: 30px 0;
+}
+
+/* On the page wrapper */
+.dsm-timeline {
+  position: relative;
+}
+.dsm-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  border-left: 3px dotted rgb(73, 73, 73);
+}
+
+.dsm-date {
+  position: relative;
+  background: #FDFAF5;
+  clear: both;
+  width: 100%;
+  text-align: center;
+}
+
+/* Each little box */
+.dsm-box {
+  position: relative;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  clear: both;
 }

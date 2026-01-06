@@ -4,7 +4,7 @@ category: translation
 image: /images/twilight.png
 ---
 
-My English translation of Joaquín Sabina's song "So Young and So Old".  
+<i>My English translation of Joaquín Sabina's song "So Young and So Old".</i>  
 
 The first thing I wanted was to get far away  
 We, the kids that hated mirrors  

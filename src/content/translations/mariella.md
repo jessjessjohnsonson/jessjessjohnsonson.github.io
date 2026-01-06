@@ -4,7 +4,7 @@ category: translation
 image: /images/pelton-departure.jpg
 ---
 
-This is my Spanish translation of the Leon Bridges' and Khruangbin's beautiful song "Mariella".
+<i>This is my Spanish translation of the Leon Bridges' and Khruangbin's beautiful song "Mariella".</i>
 
 Pelo negro como el cielo de medianoche  
 Ojos como la jungla, eres algo salvaje  
